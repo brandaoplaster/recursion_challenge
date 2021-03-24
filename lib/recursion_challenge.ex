@@ -1,18 +1,14 @@
 defmodule RecursionChallenge do
-  @moduledoc """
-  Documentation for `RecursionChallenge`.
-  """
+  def call(list) do
+    list_length(list, 0)
+  end
 
-  @doc """
-  Hello world.
+  defp list_length([], acc) do
+    acc
+  end
 
-  ## Examples
-
-      iex> RecursionChallenge.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  defp list_length([_head | tail], acc) do
+    acc = acc + 1
+    list_length(tail, acc)
   end
 end
